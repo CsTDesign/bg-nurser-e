@@ -1,6 +1,6 @@
 E-commerce project idea for long-time employer. Minimum viable product.
 
-.env template
+.env template to be created in your root folder
 PORT=5000
 
 MONGO_URI=your_mongo_uri
