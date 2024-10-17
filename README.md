@@ -1,4 +1,5 @@
 E-commerce project idea for long-time employer. Minimum viable product.
+Photos on home page designed by [Freepik](https://www.freepik.com/).
 
 .env template to be created in your root folder
 PORT=5000
