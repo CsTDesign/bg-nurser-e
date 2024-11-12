@@ -71,7 +71,7 @@ export const useUserStore = create((set, get) => ({
         checkingAuth: false
       });
     } catch (error) {
-      console.log("auth check error", error.message);
+      console.log("auth check error" ,error.message);
       set({
         checkingAuth: false,
         user: null
@@ -107,16 +107,15 @@ axios.interceptors.response.use(
     if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
 
-      // If refresh already in progress, wait for completion
-      if (refreshPromise) {
-        await refreshPromise;
-        return axios(originalRequest);
-      }
-
-      // Start new refresh process
-      refreshPromise = useUserStore.getState().refreshToken();
-
       try {
+        // If refresh already in progress, wait for completion
+        if (refreshPromise) {
+          await refreshPromise;
+          return axios(originalRequest);
+        }
+
+        // Start new refresh process
+        refreshPromise = useUserStore.getState().refreshToken();
         await refreshPromise;
         refreshPromise = null;
 
