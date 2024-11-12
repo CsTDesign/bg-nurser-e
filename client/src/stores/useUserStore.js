@@ -107,15 +107,16 @@ axios.interceptors.response.use(
     if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
 
-      try {
-        // If refresh already in progress, wait for completion
-        if (refreshPromise) {
-          await refreshPromise;
-          return axios(originalRequest);
-        }
+      // If refresh already in progress, wait for completion
+      if (refreshPromise) {
+        await refreshPromise;
+        return axios(originalRequest);
+      }
 
-        // Start new refresh process
-        refreshPromise = useUserStore.getState().refreshToken();
+      // Start new refresh process
+      refreshPromise = useUserStore.getState().refreshToken();
+
+      try {
         await refreshPromise;
         refreshPromise = null;
 
