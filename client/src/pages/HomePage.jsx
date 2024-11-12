@@ -78,6 +78,17 @@ const HomePage = () => {
           }
         </div>
 
+        <p className="text-center text-xs">
+          Category images designed by{" "}
+          <a
+            href="https://www.freepik.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Freepik
+          </a>
+        </p>
+
         {
           !isLoading && products.length > 0 && <FeaturedProducts featuredProducts={products} />
         }

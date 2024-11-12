@@ -51,7 +51,7 @@ const CartItem = ({ item }) => {
             {item.name}
           </p>
 
-          <p className="text-sm truncate">
+          <p className="text-sm">
             {item.description}
           </p>
 
