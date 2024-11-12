@@ -23,6 +23,21 @@ export const useProductStore = create((set) => ({
       set({ loading: false });
     }
   },
+  editProduct: async (productId, updatedData) => {
+    set({ loading: true });
+
+    try {
+      const res = await axios.put(`/products/${productId}`, updatedData);
+      set((prevState) => ({
+        products: prevState.products.map(
+          product => product.id === productId ? res.data : product
+        )
+      }));
+    } catch (error) {
+      toast.error(error.response.data.error);
+      set({ loading: false });
+    }
+  },
   fetchAllProducts: async () => {
     set({ loading: true });
 

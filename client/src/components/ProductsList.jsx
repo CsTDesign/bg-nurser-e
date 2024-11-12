@@ -39,12 +39,12 @@ const ProductsList = () => {
             >
               Price
             </th>
-            <th
+            {/* <th
               className="font-medium px-6 py-3 text-left text-white text-xs tracking-wider uppercase"
               scope="col"
             >
               Stock Quantity
-            </th>
+            </th> */}
             <th
               className="font-medium px-6 py-3 text-left text-white text-xs tracking-wider uppercase"
               scope="col"
@@ -95,11 +95,11 @@ const ProductsList = () => {
                   </div>
                 </td>
 
-                <td className="px-6 py-4 whitespace-nowrap">
+                {/* <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm">
                     {product.stockQty}
                   </div>
-                </td>
+                </td> */}
 
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm">

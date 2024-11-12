@@ -51,7 +51,7 @@ const CartItem = ({ item }) => {
             {item.name}
           </p>
 
-          <p className="text-sm">
+          <p className="text-sm whitespace-pre-line">
             {item.description}
           </p>
 

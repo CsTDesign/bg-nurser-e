@@ -22,7 +22,7 @@ const CreateProductForm = () => {
     name: "",
     description: "",
     price: "",
-    stockQty: "",
+    // stockQty: "",
     category: "",
     image: ""
   });
@@ -41,7 +41,7 @@ const CreateProductForm = () => {
         name: "",
         description: "",
         price: "",
-        stockQty: "",
+        // stockQty: "",
         category: "",
         image: ""
       });
@@ -147,28 +147,6 @@ const CreateProductForm = () => {
             step="0.01"
             type="number"
             value={newProduct.price}
-          />
-        </div>
-
-        <div>
-          <label
-            className="block font-medium text-sm"
-            htmlFor="stockQty"
-          >
-            Stock Quantity
-          </label>
-          <input
-            className="bg-white block border border-gray-600 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 mt-1 px-3 py-2 rounded-md shadow-sm w-full"
-            id="stockQty"
-            name="stockQty"
-            onChange={(e) => setNewProduct({
-              ...newProduct,
-              stockQty: e.target.value
-            })}
-            required
-            step="1"
-            type="number"
-            value={newProduct.stockQty}
           />
         </div>
 

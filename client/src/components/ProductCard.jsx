@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
   const { user } = useUserStore();
   const { addToCart } = useCartStore();
   
-  const isSoldOut = product.stockQty <= 0;
+  // const isSoldOut = product.stockQty <= 0;
 
   const handleAddToCart = () => {
     if (!user) {
@@ -45,29 +45,26 @@ const ProductCard = ({ product }) => {
           </p>
         </div>
 
-        {
-          isSoldOut ? (
-            <button
-              className="bg-emerald-600 disabled:opacity-50 flex focus:outline-none focus:ring-4 focus:ring-emerald-300 font-medium hover:bg-emerald-700 items-center justify-center px-5 py-2.5 rounded-lg text-center text-sm text-white"
-              disabled={true}
-            >
-              Sold out
-            </button>
-          ) : (
-            <button
-              className="bg-emerald-600 flex focus:outline-none focus:ring-4 focus:ring-emerald-300 font-medium hover:bg-emerald-700 items-center justify-center px-5 py-2.5 rounded-lg text-center text-sm text-white"
-              onClick={handleAddToCart}
-            >
-              <ShoppingCart
-                className="mr-2"
-                size={22}
-              />
-              Add to Cart
-            </button>
-          )
-        }
+        <div className="flex items-center justify-between mb-5 mt-2">
+          <p>
+            <span className="font-semibold overflow-y-auto text-xs tracking-tight whitespace-pre-line">
+              {product.description}
+            </span>
+          </p>
+        </div>
 
-        <p>
+        <button
+          className="bg-emerald-600 flex focus:outline-none focus:ring-4 focus:ring-emerald-300 font-medium hover:bg-emerald-700 items-center justify-center px-5 py-2.5 rounded-lg text-center text-sm text-white"
+          onClick={handleAddToCart}
+        >
+          <ShoppingCart
+            className="mr-2"
+            size={22}
+          />
+          Add to Cart
+        </button>
+
+        {/* <p>
           {
             isSoldOut ? (
               <span className="font-bold text-red-800 text-right text-sm">
@@ -79,7 +76,7 @@ const ProductCard = ({ product }) => {
               </span>
             )
           }
-        </p>
+        </p> */}
       </div>
     </div>
   );

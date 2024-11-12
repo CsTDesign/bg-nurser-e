@@ -47,7 +47,7 @@ export const createProduct = async (req, res) => {
       name,
       description,
       price,
-      stockQty,
+      // stockQty,
       image,
       category
     } = req.body;
@@ -64,7 +64,7 @@ export const createProduct = async (req, res) => {
       name,
       description,
       price,
-      stockQty,
+      // stockQty,
       image: cloudinaryResponse?.secure_url ? cloudinaryResponse.secure_url : "",
       category
     });
